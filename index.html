@@ -110,6 +110,23 @@
   };
 </script>
 
+<script>
+  const snowCount = 40;
+
+  for (let i = 0; i < snowCount; i++) {
+    const snow = document.createElement('div');
+    snow.className = 'snowflake';
+    snow.style.left = Math.random() * 100 + 'vw';
+    snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+    snow.style.opacity = Math.random();
+    snow.style.fontSize = 10 + Math.random() * 20 + 'px';
+    snow.innerHTML = '❄';
+    document.body.appendChild(snow);
+  }
+</script>
+
+  
 </body>
 </html>
+
 
