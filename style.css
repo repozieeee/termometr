@@ -130,3 +130,41 @@ footer {
 .section.dark {
   margin-bottom: 120px;
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(600px 600px at 20% 10%, rgba(56,189,248,0.12), transparent 60%),
+    radial-gradient(500px 500px at 80% 30%, rgba(37,99,235,0.12), transparent 60%),
+    radial-gradient(700px 700px at 50% 80%, rgba(14,165,233,0.08), transparent 60%);
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.snowflake {
+  position: fixed;
+  top: -10%;
+  color: white;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
