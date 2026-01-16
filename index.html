@@ -4,109 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Умный термометр</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-    }
-    header {
-      background: linear-gradient(135deg, #1e88e5, #42a5f5);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background: white;
-      color: #1e88e5;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #1e88e5;
-    }
-    .app {
-      background: #e3f2fd;
-      border-radius: 20px;
-    }
-    footer {
-      background: #1e88e5;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
+<header class="hero">
   <h1>Умный термометр</h1>
-  <p>Контроль температуры с автоматическими оповещениями и управлением со смартфона</p>
-  <a class="btn" href="#features">Узнать больше</a>
+  <p>Профессиональный контроль температуры с оповещениями и управлением со смартфона</p>
+  <button class="btn" id="openProducts">Наши товары</button>
 </header>
 
-<section id="features">
+<section class="section">
   <h2>Возможности устройства</h2>
   <div class="features">
-    <div class="card">
-      <h3>Точная фиксация температуры</h3>
-      <p>Непрерывное измерение температуры с высокой точностью в реальном времени.</p>
-    </div>
-    <div class="card">
-      <h3>Звуковая и визуальная сигнализация</h3>
-      <p>При достижении заданного порога термометр начинает мигать и издавать звуковой сигнал.</p>
-    </div>
-    <div class="card">
-      <h3>Настройка порогов</h3>
-      <p>Вы сами задаёте критические значения температуры под свои задачи.</p>
-    </div>
-    <div class="card">
-      <h3>Управление со смартфона</h3>
-      <p>Полный контроль через мобильное приложение: мониторинг, история и уведомления.</p>
-    </div>
+    <div class="card">Точная фиксация температуры в реальном времени</div>
+    <div class="card">Звуковая и визуальная сигнализация</div>
+    <div class="card">Гибкая настройка температурных порогов</div>
+    <div class="card">Удалённое управление со смартфона</div>
   </div>
 </section>
 
-<section class="app">
-  <h2>Мобильное приложение</h2>
-  <p>
-    Подключите термометр к смартфону и следите за показателями из любой точки мира.
-    Приложение позволяет получать push-уведомления, анализировать данные и управлять устройством удалённо.
-  </p>
-</section>
-
-<section>
-  <h2>Где применяется</h2>
+<section class="section dark">
+  <h2>Где используется</h2>
   <div class="features">
     <div class="card">Дом и квартира</div>
     <div class="card">Детские комнаты</div>
@@ -116,8 +35,80 @@
 </section>
 
 <footer>
-  <p>© 2026 Умный термометр. Демонстрационный сайт</p>
+  <p>© 2026 Умный термометр — демонстрационный проект</p>
 </footer>
+
+<!-- Модальное окно товаров -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="close">×</span>
+
+    <div class="product">
+      <img id="productImage" src="https://via.placeholder.com/300x300" alt="Термометр" />
+      <div class="product-info">
+        <h3 id="productTitle">Умный термометр (Чёрный)</h3>
+        <p id="productDesc">Современный термометр с Bluetooth и сигнализацией.</p>
+        <h4>Комплектующие:</h4>
+        <ul>
+          <li>Arduino Uno</li>
+          <li>Датчик температуры DS18B20</li>
+          <li>Резистор 4,7 кОм</li>
+          <li>LCD-дисплей 16×2</li>
+          <li>Bluetooth-модуль</li>
+          <li>Зуммер</li>
+          <li>Резистор 220 Ом</li>
+          <li>Макетная плата</li>
+          <li>Соединительные провода</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="prev">◀</button>
+      <button id="next">▶</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('productModal');
+  const openBtn = document.getElementById('openProducts');
+  const closeBtn = document.querySelector('.close');
+
+  const products = [
+    {
+      title: 'Умный термометр (Чёрный)',
+      img: 'https://via.placeholder.com/300x300/111111/ffffff',
+      desc: 'Классический чёрный корпус. Универсальный вариант.'
+    },
+    {
+      title: 'Умный термометр (Белый)',
+      img: 'https://via.placeholder.com/300x300/f5f5f5/000000',
+      desc: 'Белый корпус. Идеально для интерьера.'
+    }
+  ];
+
+  let index = 0;
+
+  function render() {
+    document.getElementById('productTitle').textContent = products[index].title;
+    document.getElementById('productImage').src = products[index].img;
+    document.getElementById('productDesc').textContent = products[index].desc;
+  }
+
+  openBtn.onclick = () => modal.style.display = 'flex';
+  closeBtn.onclick = () => modal.style.display = 'none';
+
+  document.getElementById('next').onclick = () => {
+    index = (index + 1) % products.length;
+    render();
+  };
+
+  document.getElementById('prev').onclick = () => {
+    index = (index - 1 + products.length) % products.length;
+    render();
+  };
+</script>
 
 </body>
 </html>
