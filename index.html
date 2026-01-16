@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Умный термометр</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, #1e88e5, #42a5f5);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: white;
+      color: #1e88e5;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #1e88e5;
+    }
+    .app {
+      background: #e3f2fd;
+      border-radius: 20px;
+    }
+    footer {
+      background: #1e88e5;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Умный термометр</h1>
+  <p>Контроль температуры с автоматическими оповещениями и управлением со смартфона</p>
+  <a class="btn" href="#features">Узнать больше</a>
+</header>
+
+<section id="features">
+  <h2>Возможности устройства</h2>
+  <div class="features">
+    <div class="card">
+      <h3>Точная фиксация температуры</h3>
+      <p>Непрерывное измерение температуры с высокой точностью в реальном времени.</p>
+    </div>
+    <div class="card">
+      <h3>Звуковая и визуальная сигнализация</h3>
+      <p>При достижении заданного порога термометр начинает мигать и издавать звуковой сигнал.</p>
+    </div>
+    <div class="card">
+      <h3>Настройка порогов</h3>
+      <p>Вы сами задаёте критические значения температуры под свои задачи.</p>
+    </div>
+    <div class="card">
+      <h3>Управление со смартфона</h3>
+      <p>Полный контроль через мобильное приложение: мониторинг, история и уведомления.</p>
+    </div>
+  </div>
+</section>
+
+<section class="app">
+  <h2>Мобильное приложение</h2>
+  <p>
+    Подключите термометр к смартфону и следите за показателями из любой точки мира.
+    Приложение позволяет получать push-уведомления, анализировать данные и управлять устройством удалённо.
+  </p>
+</section>
+
+<section>
+  <h2>Где применяется</h2>
+  <div class="features">
+    <div class="card">Дом и квартира</div>
+    <div class="card">Детские комнаты</div>
+    <div class="card">Склады и холодильники</div>
+    <div class="card">Лаборатории и производство</div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Умный термометр. Демонстрационный сайт</p>
+</footer>
+
+</body>
+</html>
