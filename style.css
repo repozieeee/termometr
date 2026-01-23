@@ -41,8 +41,8 @@ nav a:hover {
 
 /* BLOCKS */
 .block {
-  min-height: 100vh;
-  padding: 140px 20px 80px;
+  min-height: auto; /* не заставляем каждый блок быть full screen */
+  padding: 80px 20px 60px; /* меньше сверху и снизу */
   max-width: 1200px;
   margin: auto;
 }
@@ -126,6 +126,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .order-box {
@@ -284,7 +286,8 @@ footer {
 }
 
 .features {
-  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .features::before {
@@ -314,10 +317,13 @@ footer {
 }
 
 .hero {
-  position: relative; /* для позиционирования блока продукта */
+  padding-top: 100px; /* чуть выше текста */
+  padding-bottom: 60px;
 }
 
 .product-preview {
+  margin-top: 20px; /* чуть выше кнопки */
+  margin-bottom: 20px;
   position: absolute;
   top: 100%; /* прямо под кнопкой */
   left: 50%;
@@ -362,6 +368,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 
 
