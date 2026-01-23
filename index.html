@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>ThermoTech — умный термометр</title>
+  <title>TempGuard — умный термометр</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,7 +10,7 @@
 
 <!-- ШАПКА -->
 <header class="navbar">
-  <div class="logo">ThermoTech</div>
+  <div class="logo">TempGuard</div>
   <nav>
     <a href="index.html" class="active">Главная</a>
     <a href="gallery.html">Галерея</a>
@@ -18,32 +18,13 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="block hero">
   <h1>Умный термометр нового поколения</h1>
   <p>Точный контроль температуры, оповещения и управление
     со смартфона — для дома и профессионального использования</p>
-  <button class="btn" id="productBtn">Перейти к продукту</button>
-  <div class="modal" id="productModal">
-    <div class="modal-content preview-modal">
-      <span class="close" id="closeProduct">×</span>
-      <div class="preview-box">
-        <img src="term1.jpg" alt="Термометр">
-        <div class="preview-info">
-          <h3>Умный термометр</h3>
-          <ul>
-            <li>Arduino Uno</li>
-            <li>DS18B20</li>
-            <li>Bluetooth-модуль</li>
-            <li>LCD 16×2</li>
-            <li>Зуммер</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <button class="btn" id="productBtn">Быстрый взгляд на продукт</button>
 </section>
-
-
 
 <!-- ПРЕИМУЩЕСТВА -->
 <section class="block features">
@@ -56,79 +37,70 @@
   </div>
 </section>
 
+<!-- ЗАКАЗ -->
 <section class="block order">
   <div class="order-box">
     <h2>Заказать устройство</h2>
-
-    <p class="price">
-      Цена: <span>2 228 ₽</span>
-    </p>
-
+    <p class="price">Цена: <span>2 228 ₽</span></p>
     <ul class="payment">
       <li>💳 Банковская карта</li>
       <li>📱 СБП</li>
       <li>💵 Наличные при получении</li>
     </ul>
-
-    <button class="btn cold" id="openOrder">
-      Оформить заказ
-    </button>
+    <button class="btn cold" id="openOrder">Оформить заказ</button>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 ThermoTech — учебный проект
+  © 2026 TempGuard — учебный проект
 </footer>
 
+<!-- МОДАЛКИ -->
 <div class="modal" id="orderModal">
   <div class="modal-content order-modal">
     <span class="close" id="closeOrder">×</span>
-
     <h3>Оформление заказа</h3>
-
     <form class="order-form">
-      <label>
-        Email
+      <label>Email
         <input type="email" placeholder="example@mail.com" required />
       </label>
-
-      <label>
-        Адрес доставки
+      <label>Адрес доставки
         <textarea placeholder="Город, улица, дом, квартира" required></textarea>
       </label>
-
-      <button class="btn cold" type="submit">
-        Подтвердить заказ
-      </button>
+      <button class="btn cold" type="submit">Подтвердить заказ</button>
     </form>
   </div>
 </div>
 
-<script src="script.js"></script>
+<div class="modal" id="productModal">
+  <div class="modal-content preview-modal">
+    <span class="close" id="closeProduct">×</span>
+    <div class="preview-box">
+      <img src="term1.jpg" alt="Термометр">
+      <div class="preview-info">
+        <h3>Умный термометр</h3>
+        <ul>
+          <li>Arduino Uno</li>
+          <li>DS18B20</li>
+          <li>Bluetooth-модуль</li>
+          <li>LCD 16×2</li>
+          <li>Зуммер</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-</body>
-
-<body>
-
+<!-- ТЕРМОМЕТР -->
 <div class="thermo-bar">
   <div class="thermo-top">+20°C</div>
-
   <div class="thermo-track">
     <div class="thermo-fill"></div>
   </div>
-
   <div class="thermo-bottom">−5°C</div>
 </div>
-  
+
+<script src="script.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
