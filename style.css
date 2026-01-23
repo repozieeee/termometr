@@ -1,411 +1,52 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+body { margin:0; font-family:'Segoe UI',sans-serif; color:#e5e7eb; background:linear-gradient(to bottom,#3b0a0a 0%,#5b1b1b 25%,#312e81 55%,#020617 100%); }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #e5e7eb;
-  background: linear-gradient(
-    to bottom,
-    #3b0a0a 0%,
-    #5b1b1b 25%,
-    #312e81 55%,
-    #020617 100%
-  );
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between; /* логотип слева, меню справа */
-  align-items: center;
-  background: rgba(2,6,23,0.95);
-  padding: 20px 40px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 4000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
-}
-
-nav {
-  display: flex;
-  gap: 30px; /* расстояние между пунктами меню */
-}
-
-nav a {
-  color: #cbd5f5;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-nav a.active,
-nav a:hover {
-  color: #38bdf8;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 600;
-}
+/* NAVBAR */
+.navbar { display:flex; justify-content:space-between; align-items:center; background:rgba(2,6,23,0.95); padding:20px 40px; position:fixed; top:0; width:100%; z-index:4000; box-shadow:0 4px 20px rgba(0,0,0,0.7); }
+nav { display:flex; gap:30px; }
+nav a { color:#cbd5f5; text-decoration:none; font-weight:500; }
+nav a.active, nav a:hover { color:#38bdf8; }
+.logo { font-size:22px; font-weight:600; }
 
 /* BLOCKS */
-.block {
-  min-height: 80vh; /* не заставляем каждый блок быть full screen */
-  padding: 80px 20px 60px; /* меньше сверху и снизу */
-  max-width: 1200px;
-  margin: auto;
-}
+.block { min-height:80vh; padding:100px 20px 60px; max-width:1200px; margin:auto; }
+.hero h1 { font-size:48px; }
+.hero p { max-width:700px; font-size:20px; margin:20px 0 40px; }
 
-.hero h1 {
-  font-size: 48px;
-}
-
-.hero p {
-  max-width: 700px;
-  font-size: 20px;
-  margin: 20px 0 40px;
-}
-
-/* BUTTON */
-.btn {
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(135deg, #ef4444, #b91c1c);
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn.cold {
-  background: linear-gradient(135deg, #38bdf8, #2563eb);
-}
+/* BUTTONS */
+.btn { padding:14px 36px; border-radius:30px; border:none; background:linear-gradient(135deg,#ef4444,#b91c1c); color:white; font-size:16px; cursor:pointer; }
+.btn.cold { background:linear-gradient(135deg,#38bdf8,#2563eb); }
 
 /* FEATURES */
-.features h2,
-.order h2 {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  padding: 30px;
-  border-radius: 20px;
-  background: rgba(15,23,42,0.6);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
-}
+.features h2,.order h2 { text-align:center; margin-bottom:50px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:30px; }
+.card { padding:30px; border-radius:20px; background:rgba(15,23,42,0.6); box-shadow:0 20px 40px rgba(0,0,0,0.4); backdrop-filter:blur(8px); transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform:scale(1.15); box-shadow:0 40px 80px rgba(56,189,248,0.45); }
 
 /* ORDER */
-.price {
-  text-align: center;
-  font-size: 22px;
-}
+.order { display:flex; justify-content:center; align-items:center; padding:50px 0; }
+.order-box { background:rgba(15,23,42,0.55); backdrop-filter:blur(12px); border-radius:30px; padding:50px 60px; max-width:500px; width:100%; text-align:center; box-shadow:0 30px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.08); }
+.price { font-size:22px; text-align:center; margin-bottom:25px; }
+.price span { color:#38bdf8; font-weight:bold; }
+.payment { list-style:none; padding:0; margin:25px 0 35px; text-align:center; }
+.payment li { margin:10px 0; }
 
-.price span {
-  color: #38bdf8;
-  font-weight: bold;
-}
+/* FOOTER */
+footer { text-align:center; padding:30px; background:#020617; }
 
-.payment {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 30px 0;
-}
+/* MODAL */
+.modal { display:none; position:fixed; inset:0; background:rgba(2,6,23,0.75); backdrop-filter:blur(6px); justify-content:center; align-items:center; z-index:5000; }
+.modal-content { background:rgba(15,23,42,0.85); border-radius:30px; padding:40px; box-shadow:0 40px 80px rgba(0,0,0,0.6); animation:popup 0.35s ease; position:relative; }
+.close { position:absolute; top:20px; right:20px; font-size:26px; cursor:pointer; color:#cbd5f5; }
+@keyframes popup { from { transform:scale(0.85); opacity:0 } to { transform:scale(1); opacity:1 } }
 
-.payment li {
-  margin: 10px 0;
-}
+/* PRODUCT PREVIEW */
+.preview-box { display:flex; gap:40px; background:rgba(15,23,42,0.7); border-radius:30px; padding:40px; backdrop-filter:blur(10px); max-width:900px; margin:0 auto; }
+.preview-box img { width:250px; border-radius:20px; }
 
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #020617;
-}
-
-/* ORDER BOX */
-.order {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.order-box {
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(12px);
-  border-radius: 30px;
-  padding: 50px 60px;
-  max-width: 500px;
-  width: 100%;
-  text-align: center;
-  box-shadow:
-    0 30px 60px rgba(0,0,0,0.5),
-    inset 0 0 0 1px rgba(255,255,255,0.08);
-}
-
-.order-box h2 {
-  margin-bottom: 20px;
-}
-
-.price {
-  font-size: 22px;
-  margin-bottom: 25px;
-}
-
-.payment {
-  list-style: none;
-  padding: 0;
-  margin: 25px 0 35px;
-}
-
-.payment li {
-  margin: 10px 0;
-}
-
-/* ORDER MODAL */
-.order-modal {
-  max-width: 420px;
-}
-
-.order-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.order-form label {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  font-size: 14px;
-  color: #cbd5f5;
-}
-
-.order-form input,
-.order-form textarea {
-  margin-top: 6px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: none;
-  background: rgba(255,255,255,0.08);
-  color: white;
-  resize: none;
-}
-
-.order-form input:focus,
-.order-form textarea:focus {
-  outline: 1px solid #38bdf8;
-}
-
-/* MODAL BASE */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.75);
-  backdrop-filter: blur(6px);
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.modal-content {
-  background: rgba(15, 23, 42, 0.85);
-  border-radius: 30px;
-  padding: 40px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-  animation: popup 0.35s ease;
-}
-
-.close {
-  float: right;
-  font-size: 26px;
-  cursor: pointer;
-  color: #cbd5f5;
-}
-
-@keyframes popup {
-  from {
-    transform: scale(0.85);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* THERMOMETER FULL HEIGHT */
-.thermo-bar {
-  position: fixed;
-  right: 24px;
-  top: 80px; /* отступ ниже шапки */
-  height: calc(100vh - 80px); /* высота с учётом шапки */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 3000;
-}
-
-
-.thermo-top,
-.thermo-bottom {
-  font-size: 14px;
-  color: #e5e7eb;
-  margin: 10px 0;
-}
-
-.thermo-track {
-  flex: 1; /* ЗАНИМАЕТ ВСЮ СЕРЕДИНУ */
-  width: 10px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.thermo-fill {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to top,
-    #2563eb,
-    #38bdf8,
-    #ef4444
-  );
-  transition: height 0.2s linear;
-}
-
-
-.thermo-label {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #cbd5f5;
-}
-
-.features {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.features::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: rgba(2,6,23,0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 900;
-}
-
-.features.active::before {
-  opacity: 1;
-}
-
-.card {
-  position: relative;
-  z-index: 1000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.15);
-  box-shadow: 0 40px 80px rgba(56,189,248,0.45);
-}
-
-.hero {
-  padding-top: 100px; /* чуть выше текста */
-  padding-bottom: 60px;
-}
-
-.product-preview {
-  margin-top: 20px; /* чуть выше кнопки */
-  margin-bottom: 20px;
-  position: absolute;
-  top: 100%; /* прямо под кнопкой */
-  left: 50%;
-  transform: translateX(-50%);
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: max-height 0.5s ease, opacity 0.3s ease;
-  z-index: 4000;
-}
-
-.product-preview.open {
-  max-height: 600px; /* достаточная высота */
-  opacity: 1;
-  pointer-events: all;
-}
-
-.preview-box {
-  margin: 40px auto;
-  max-width: 900px;
-  background: rgba(15,23,42,0.7);
-  border-radius: 30px;
-  padding: 40px;
-  display: flex;
-  gap: 40px;
-  backdrop-filter: blur(10px);
-}
-
-.preview-box img {
-  width: 250px;
-  border-radius: 20px;
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Модалка продукта — как заказ */
-.preview-modal {
-  max-width: 900px;
-}
-
-.preview-box {
-  display: flex;
-  gap: 40px;
-  background: rgba(15,23,42,0.7);
-  border-radius: 30px;
-  padding: 40px;
-  backdrop-filter: blur(10px);
-}
-
-.preview-box img {
-  width: 250px;
-  border-radius: 20px;
-}
-
-/* Модалка base */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.75);
-  backdrop-filter: blur(6px);
-  justify-content: center;
-  align-items: center;
-  z-index: 4000;
-}
+/* THERMOMETER */
+.thermo-bar { position:fixed; right:24px; top:80px; height:calc(100vh - 80px); display:flex; flex-direction:column; align-items:center; z-index:3000; }
+.thermo-top,.thermo-bottom { font-size:14px; color:#e5e7eb; margin:10px 0; }
+.thermo-track { flex:1; width:10px; background:rgba(255,255,255,0.2); border-radius:10px; overflow:hidden; position:relative; }
+.thermo-fill { position:absolute; bottom:0; width:100%; height:100%; background:linear-gradient(to top,#2563eb,#38bdf8,#ef4444); transition:height 0.2s linear; }
+.thermo-label { margin-top:10px; font-size:14px; color:#cbd5f5; }
