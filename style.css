@@ -242,23 +242,33 @@ footer {
   }
 }
 
-/* THERMOMETER */
+/* THERMOMETER FULL HEIGHT */
 .thermo-bar {
   position: fixed;
-  right: 20px;
-  top: 120px;
-  height: 60vh;
-  width: 40px;
+  right: 24px;
+  top: 0;
+  height: 100vh; /* ВСЯ ВЫСОТА */
+  width: 60px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1500;
+
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.thermo-top,
+.thermo-bottom {
+  font-size: 14px;
+  color: #e5e7eb;
+  margin: 10px 0;
 }
 
 .thermo-track {
-  flex: 1;
+  flex: 1; /* ЗАНИМАЕТ ВСЮ СЕРЕДИНУ */
   width: 10px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -269,9 +279,15 @@ footer {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, #2563eb, #ef4444);
+  background: linear-gradient(
+    to top,
+    #2563eb,
+    #38bdf8,
+    #ef4444
+  );
   transition: height 0.2s linear;
 }
+
 
 .thermo-label {
   margin-top: 10px;
@@ -354,3 +370,4 @@ footer {
     opacity: 1;
   }
 }
+
