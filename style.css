@@ -16,27 +16,37 @@ body {
 }
 
 .navbar {
-  background: rgba(2,6,23,0.95); /* почти непрозрачная */
-  backdrop-filter: blur(0px); /* убираем блюр */
+  display: flex;
+  justify-content: space-between; /* логотип слева, меню справа */
+  align-items: center;
+  background: rgba(2,6,23,0.95);
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.7);
-  z-index: 4000; /* выше всего */
 }
 
-
-.logo {
-  font-size: 22px;
-  font-weight: 600;
+nav {
+  display: flex;
+  gap: 30px; /* расстояние между пунктами меню */
 }
 
 nav a {
-  margin-left: 25px;
   color: #cbd5f5;
   text-decoration: none;
+  font-weight: 500;
 }
 
 nav a.active,
 nav a:hover {
   color: #38bdf8;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 /* BLOCKS */
@@ -369,14 +379,33 @@ footer {
   }
 }
 
+/* Модалка продукта — как заказ */
+.preview-modal {
+  max-width: 900px;
+}
 
+.preview-box {
+  display: flex;
+  gap: 40px;
+  background: rgba(15,23,42,0.7);
+  border-radius: 30px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
 
+.preview-box img {
+  width: 250px;
+  border-radius: 20px;
+}
 
-
-
-
-
-
-
-
-
+/* Модалка base */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 4000;
+}
