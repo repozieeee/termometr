@@ -55,3 +55,16 @@ const productPreview = document.getElementById('productPreview');
 productBtn.onclick = () => {
   productPreview.classList.toggle('open');
 };
+
+// Кнопка открыть продукт
+const productBtn = document.getElementById('productBtn');
+const productModal = document.getElementById('productModal');
+const closeProduct = document.getElementById('closeProduct');
+
+productBtn.onclick = () => {
+  productModal.style.display = 'flex';
+};
+
+closeProduct.onclick = () => {
+  productModal.style.display = 'none';
+};
