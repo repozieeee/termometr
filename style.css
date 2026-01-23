@@ -41,7 +41,7 @@ nav a:hover {
 
 /* BLOCKS */
 .block {
-  min-height: auto; /* не заставляем каждый блок быть full screen */
+  min-height: 50vh; /* не заставляем каждый блок быть full screen */
   padding: 80px 20px 60px; /* меньше сверху и снизу */
   max-width: 1200px;
   margin: auto;
@@ -368,6 +368,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 
 
