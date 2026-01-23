@@ -23,20 +23,21 @@
   <p>Точный контроль температуры, оповещения и управление
     со смартфона — для дома и профессионального использования</p>
   <button class="btn" id="productBtn">Перейти к продукту</button>
-
-  <!-- Прямо здесь, внутри hero -->
-  <div class="product-preview" id="productPreview">
-    <div class="preview-box">
-      <img src="term1.jpg" alt="Термометр">
-      <div class="preview-info">
-        <h3>Умный термометр</h3>
-        <ul>
-          <li>Arduino Uno</li>
-          <li>DS18B20</li>
-          <li>Bluetooth-модуль</li>
-          <li>LCD 16×2</li>
-          <li>Зуммер</li>
-        </ul>
+  <div class="modal" id="productModal">
+    <div class="modal-content preview-modal">
+      <span class="close" id="closeProduct">×</span>
+      <div class="preview-box">
+        <img src="term1.jpg" alt="Термометр">
+        <div class="preview-info">
+          <h3>Умный термометр</h3>
+          <ul>
+            <li>Arduino Uno</li>
+            <li>DS18B20</li>
+            <li>Bluetooth-модуль</li>
+            <li>LCD 16×2</li>
+            <li>Зуммер</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -118,14 +119,9 @@
 
   <div class="thermo-bottom">−5°C</div>
 </div>
-
-
-<!-- ШАПКА -->
-<header class="navbar">
-  ...
-</header>
   
 </html>
+
 
 
 
