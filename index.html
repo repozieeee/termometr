@@ -39,16 +39,26 @@
   </div>
 </section>
 
-<!-- ЗАКАЗ -->
 <section class="block order">
-  <h2>Заказать устройство</h2>
-  <p class="price">Цена: <span>4 990 ₽</span></p>
+  <div class="order-box">
+    <h2>Заказать устройство</h2>
 
-  <ul class="payment">
-    <li>💳 Банковская карта</li>
-    <li>📱 СБП</li>
-    <li>💵 Наличные при получении</li>
-  </ul>
+    <p class="price">
+      Цена: <span>4 990 ₽</span>
+    </p>
+
+    <ul class="payment">
+      <li>💳 Банковская карта</li>
+      <li>📱 СБП</li>
+      <li>💵 Наличные при получении</li>
+    </ul>
+
+    <button class="btn cold" id="openOrder">
+      Оформить заказ
+    </button>
+  </div>
+</section>
+
 
   <button class="btn cold">Оформить заказ</button>
 </section>
@@ -57,5 +67,31 @@
   © 2026 ThermoTech — учебный проект
 </footer>
 
+<div class="modal" id="orderModal">
+  <div class="modal-content order-modal">
+    <span class="close" id="closeOrder">×</span>
+
+    <h3>Оформление заказа</h3>
+
+    <form class="order-form">
+      <label>
+        Email
+        <input type="email" placeholder="example@mail.com" required />
+      </label>
+
+      <label>
+        Адрес доставки
+        <textarea placeholder="Город, улица, дом, квартира" required></textarea>
+      </label>
+
+      <button class="btn cold" type="submit">
+        Подтвердить заказ
+      </button>
+    </form>
+  </div>
+</div>
+
+
 </body>
 </html>
+
