@@ -23,3 +23,25 @@ window.addEventListener('scroll', () => {
   const progress = Math.min(scrollTop / docHeight, 1);
   thermoFill.style.height = `${100 - progress * 100}%`;
 });
+
+// ГАЛЕРЕЯ
+const galleryTrack = document.getElementById('galleryTrack');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+if(galleryTrack && prevBtn && nextBtn){
+    let currentIndex = 0;
+    const items = galleryTrack.querySelectorAll('.gallery-item');
+    const itemWidth = items[0].offsetWidth + 20; // 20px margin
+    function updateGallery() {
+        galleryTrack.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
+    }
+    prevBtn.onclick = () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        updateGallery();
+    }
+    nextBtn.onclick = () => {
+        currentIndex = Math.min(currentIndex + 1, items.length - 1);
+        updateGallery();
+    }
+}
