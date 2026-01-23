@@ -2,131 +2,60 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <title>ThermoTech — умный термометр</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Умный термометр</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="hero">
-  <h1>Умный термометр</h1>
-  <p>Профессиональный контроль температуры с оповещениями и управлением со смартфона</p>
-  <button class="btn" id="openProducts">Наши товары</button>
+<!-- ШАПКА -->
+<header class="navbar">
+  <div class="logo">ThermoTech</div>
+  <nav>
+    <a href="index.html" class="active">Главная</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="product.html">Продукт</a>
+  </nav>
 </header>
 
-<section class="section">
-  <h2>Возможности устройства</h2>
-  <div class="features">
-    <div class="card">Точная фиксация температуры в реальном времени</div>
-    <div class="card">Звуковая и визуальная сигнализация</div>
-    <div class="card">Гибкая настройка температурных порогов</div>
-    <div class="card">Удалённое управление со смартфона</div>
+<!-- HERO -->
+<section class="block hero">
+  <h1>Умный термометр нового поколения</h1>
+  <p>
+    Точный контроль температуры, оповещения и управление
+    со смартфона — для дома и профессионального использования
+  </p>
+  <button class="btn">Перейти к продукту</button>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА -->
+<section class="block features">
+  <h2>Преимущества</h2>
+  <div class="cards">
+    <div class="card">Высокая точность измерений</div>
+    <div class="card">Уведомления при отклонениях</div>
+    <div class="card">Работа со смартфоном</div>
+    <div class="card">Надёжные комплектующие</div>
   </div>
 </section>
 
-<section class="section dark">
-  <h2>Где используется</h2>
-  <div class="features">
-    <div class="card">Дом и квартира</div>
-    <div class="card">Детские комнаты</div>
-    <div class="card">Склады и холодильники</div>
-    <div class="card">Лаборатории и производство</div>
-  </div>
+<!-- ЗАКАЗ -->
+<section class="block order">
+  <h2>Заказать устройство</h2>
+  <p class="price">Цена: <span>4 990 ₽</span></p>
+
+  <ul class="payment">
+    <li>💳 Банковская карта</li>
+    <li>📱 СБП</li>
+    <li>💵 Наличные при получении</li>
+  </ul>
+
+  <button class="btn cold">Оформить заказ</button>
 </section>
 
 <footer>
-  <p>© 2026 Умный термометр — демонстрационный проект</p>
+  © 2026 ThermoTech — учебный проект
 </footer>
 
-<!-- Модальное окно товаров -->
-<div class="modal" id="productModal">
-  <div class="modal-content">
-    <span class="close">×</span>
-
-    <div class="product">
-      <img id="productImage" src="https://via.placeholder.com/300x300" alt="Термометр" />
-      <div class="product-info">
-        <h3 id="productTitle">Умный термометр (Чёрный)</h3>
-        <p id="productDesc">Современный термометр с Bluetooth и сигнализацией.</p>
-        <h4>Комплектующие:</h4>
-        <ul>
-          <li>Arduino Uno</li>
-          <li>Датчик температуры DS18B20</li>
-          <li>Резистор 4,7 кОм</li>
-          <li>LCD-дисплей 16×2</li>
-          <li>Bluetooth-модуль</li>
-          <li>Зуммер</li>
-          <li>Резистор 220 Ом</li>
-          <li>Макетная плата</li>
-          <li>Соединительные провода</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="controls">
-      <button id="prev">◀</button>
-      <button id="next">▶</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  const modal = document.getElementById('productModal');
-  const openBtn = document.getElementById('openProducts');
-  const closeBtn = document.querySelector('.close');
-
-  const products = [
-    {
-      title: 'Умный термометр (Чёрный)',
-      img: 'term2.jpg',
-      desc: 'Классический чёрный корпус. Универсальный вариант.'
-    },
-    {
-      title: 'Умный термометр (Белый)',
-      img: 'term1.jpg',
-      desc: 'Белый корпус. Идеально для интерьера.'
-    }
-  ];
-
-  let index = 0;
-
-  function render() {
-    document.getElementById('productTitle').textContent = products[index].title;
-    document.getElementById('productImage').src = products[index].img;
-    document.getElementById('productDesc').textContent = products[index].desc;
-  }
-
-  openBtn.onclick = () => modal.style.display = 'flex';
-  closeBtn.onclick = () => modal.style.display = 'none';
-
-  document.getElementById('next').onclick = () => {
-    index = (index + 1) % products.length;
-    render();
-  };
-
-  document.getElementById('prev').onclick = () => {
-    index = (index - 1 + products.length) % products.length;
-    render();
-  };
-</script>
-
-<script>
-  const snowCount = 40;
-
-  for (let i = 0; i < snowCount; i++) {
-    const snow = document.createElement('div');
-    snow.className = 'snowflake';
-    snow.style.left = Math.random() * 100 + 'vw';
-    snow.style.animationDuration = 5 + Math.random() * 10 + 's';
-    snow.style.opacity = Math.random();
-    snow.style.fontSize = 10 + Math.random() * 20 + 'px';
-    snow.innerHTML = '❄';
-    document.body.appendChild(snow);
-  }
-</script>
-
-  
 </body>
 </html>
-
-
