@@ -20,6 +20,13 @@ body {
   backdrop-filter: blur(0px); /* убираем блюр */
   box-shadow: 0 4px 20px rgba(0,0,0,0.7);
   z-index: 4000; /* выше всего */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -313,20 +320,24 @@ footer {
   box-shadow: 0 40px 80px rgba(56,189,248,0.45);
 }
 
+
 .product-preview {
-  position: fixed;
-  top: calc(50% + 50px); /* чуть ниже кнопки, пример */
+  position: absolute;
+  top: 100%; /* прямо под кнопкой */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(15,23,42,0.85);
-  border-radius: 20px;
-  padding: 30px;
-  display: none;
-  z-index: 4000;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 3500;
 }
 
 .product-preview.open {
-  display: flex;
+  max-height: 600px; /* достаточно, чтобы показать весь контент */
+  opacity: 1;
+  pointer-events: all;
 }
 
 .preview-box {
@@ -347,6 +358,7 @@ footer {
 
 .hero {
   padding-bottom: 40px;
+  position: relative;
 }
 
 .product-preview.open .preview-box {
@@ -363,6 +375,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 
 
