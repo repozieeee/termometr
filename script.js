@@ -49,3 +49,9 @@ previewBtn.onclick = () => {
   }
 };
 
+const productBtn = document.getElementById('productBtn');
+const productPreview = document.getElementById('productPreview');
+
+productBtn.onclick = () => {
+  productPreview.classList.toggle('open');
+};
