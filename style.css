@@ -20,12 +20,6 @@ body {
   backdrop-filter: blur(0px); /* убираем блюр */
   box-shadow: 0 4px 20px rgba(0,0,0,0.7);
   z-index: 4000; /* выше всего */
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
-  justify-content: space-between;
-  align-items: center;
 }
 
 
