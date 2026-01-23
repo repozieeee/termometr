@@ -41,4 +41,11 @@ const preview = document.getElementById('productPreview');
 
 previewBtn.onclick = () => {
   preview.classList.toggle('open');
+  
+  // Автоскролл, чтобы блок был в поле зрения
+  if (preview.classList.contains('open')) {
+    const rect = previewBtn.getBoundingClientRect();
+    window.scrollTo({ top: window.scrollY + rect.bottom, behavior: 'smooth' });
+  }
 };
+
