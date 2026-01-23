@@ -24,7 +24,6 @@ body {
   top: 0;
   width: 100%;
   padding: 20px 40px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -320,6 +319,9 @@ footer {
   box-shadow: 0 40px 80px rgba(56,189,248,0.45);
 }
 
+.hero {
+  position: relative;
+}
 
 .product-preview {
   position: absolute;
@@ -356,11 +358,6 @@ footer {
   border-radius: 20px;
 }
 
-.hero {
-  padding-bottom: 40px;
-  position: relative;
-}
-
 .product-preview.open .preview-box {
   animation: slideDown 0.4s ease;
 }
@@ -375,6 +372,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 
 
