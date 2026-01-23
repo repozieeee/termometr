@@ -352,10 +352,6 @@ footer {
   border-radius: 20px;
 }
 
-.product-preview.open .preview-box {
-  animation: slideDown 0.4s ease;
-}
-
 @keyframes slideDown {
   from {
     transform: translateY(-20px);
@@ -366,6 +362,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 
 
