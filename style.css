@@ -126,3 +126,77 @@ footer {
   padding: 30px;
   background: #020617;
 }
+
+/* ORDER BOX */
+.order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-box {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  padding: 50px 60px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.order-box h2 {
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.payment {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 35px;
+}
+
+.payment li {
+  margin: 10px 0;
+}
+
+/* ORDER MODAL */
+.order-modal {
+  max-width: 420px;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.order-form input,
+.order-form textarea {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  resize: none;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+  outline: 1px solid #38bdf8;
+}
